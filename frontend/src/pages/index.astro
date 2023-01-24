@@ -1,18 +1,18 @@
 ---
+const pageTitle = "Home page";
+import Navigation from "../components/Nav.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="w-screen min-h-screen border-red-600 border-2 box-border p-8">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-		<h1 class="text-2xl font-bold tracking-wide">My Astro site</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="w-screen min-h-screen border-red-600 border-2 box-border p-8">
+    <Navigation />
+    <h1 class="text-2xl font-bold tracking-wide">{pageTitle}</h1>
+  </body>
 </html>
