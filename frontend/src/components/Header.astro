@@ -1,0 +1,63 @@
+---
+import Nav from "./Nav.astro";
+import Hamburger from "./Hamburger.astro";
+---
+
+{
+  /*
+<header class="bg-indigo-500 text-white">
+  <nav class="container mx-auto flex items-center justify-between p-4">
+    <a href="#" class="text-lg">Astro.js</a>
+    <div class="hidden sm:flex">
+      <a href="#" class="px-4 text-indigo-800 hover:bg-indigo-100">Home</a>
+      <a href="#" class="px-4 text-indigo-800 hover:bg-indigo-100">About</a>
+      <a href="#" class="px-4 text-indigo-800 hover:bg-indigo-100">Blog</a>
+    </div>
+    <div class="relative sm:hidden">
+      <button @click="open = !open" class="text-indigo-100 focus:outline-none">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+          ></path>
+        </svg>
+      </button>
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="absolute right-0 w-48 rounded-md bg-white py-2 shadow-md"
+      >
+        <a href="#" class="block px-4 py-2 text-indigo-800 hover:bg-indigo-100"
+          >Home</a
+        >
+        <a href="#" class="block px-4 py-2 text-indigo-800 hover:bg-indigo-100"
+          >About</a
+        >
+        <a href="#" class="block px-4 py-2 text-indigo-800 hover:bg-indigo-100"
+          >Blog</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+*/
+}
+
+<header
+  class="sticky z-10 flex w-full justify-center py-4 text-slate-700 shadow-md"
+  x-data="headerData()"
+>
+  <nav class="flex w-full max-w-7xl justify-between p-4 sm:justify-end 2xl:p-0">
+    <Hamburger action="test()" />
+    <div class="hidden w-1/4 justify-end gap-4 sm:flex"><Nav /></div>
+  </nav>
+</header>
+
+<script>
+  import "../scripts/header.js";
+</script>

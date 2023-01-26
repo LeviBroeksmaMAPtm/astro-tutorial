@@ -1,0 +1,10 @@
+{
+    "app": "Astro blog tutorial",
+    "version": "v0.0.1",
+    "pages": [
+        "Home", 
+        "About",
+        "Blog",
+        "Tags"
+    ]
+}
