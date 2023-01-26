@@ -1,18 +1,77 @@
 ---
 import Nav from "./Nav.astro";
 import Hamburger from "./Hamburger.astro";
+import data from "../data/config.json";
+import NavLink from "../components/NavLink.astro";
 ---
 
 <header
-  class="sticky z-10 flex w-full justify-center py-4 text-slate-700 shadow-md"
-  x-data="headerData()"
+  class="sticky top-0 z-50 w-full bg-white text-center text-xs font-semibold"
+  x-data="{isOpen: false, showBar: false}"
+  :class=" showBar === true ? '' : 'bg-white shadow transition duration-100' "
+  @scroll.window="window.pageYOffset > 20"
 >
-  <nav class="flex w-full max-w-7xl justify-between p-4 sm:justify-end 2xl:p-0">
-    <Hamburger action="test()" />
-    <div class="hidden w-1/4 justify-end gap-4 sm:flex"><Nav /></div>
-  </nav>
+  <div
+    class="mx-auto max-w-7xl py-4 px-6 sm:flex sm:items-center sm:justify-between"
+  >
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a
+          href="/"
+          class="flex items-center gap-2 font-bold text-gray-900 hover:text-gray-500"
+        >
+          <img
+            src="/img/logo.svg"
+            alt="Levi Broeksma | Design & Development"
+            class="w-32 sm:w-56"
+          />
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <div class="flex sm:hidden">
+        <button
+          type="button"
+          class="hover:text-cerulean-500 text-gray-900 focus:outline-none"
+          aria-label="toggle menu"
+          @click="isOpen = !isOpen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="h-8 w-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menu if mobile set on hidden -->
+    <nav
+      :class="isOpen ? 'show' : 'hidden'"
+      class="border-cerulean-200 mt-4 items-center border-t sm:mt-0 sm:flex sm:border-t-0"
+    >
+      <div
+        class="flex flex-col gap-2 pt-4 sm:ml-6 sm:flex-row sm:gap-6 sm:pt-0"
+      >
+        {
+          data.menu &&
+            data.menu.map((link) => (
+              <NavLink
+                id={link === "" ? "Home" : link === "cv" ? "CV" : link}
+                name={link === "" ? "Home" : link === "cv" ? "CV" : link}
+                url={
+                  link === "about me" ? "about-me" : link === "" ? "/" : link
+                }
+              />
+            ))
+        }
+      </div>
+    </nav>
+  </div>
 </header>
-
-<script>
-  import "../scripts/header.js";
-</script>
