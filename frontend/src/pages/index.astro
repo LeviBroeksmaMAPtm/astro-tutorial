@@ -1,9 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 const pageTitle = "Home Page";
 ---
 
 <Layout pageTitle={pageTitle}>
+  <Hero
+    img="/img/LeviBanner1.webp"
+    title="Improving the web"
+    subtitle="One build at the time"
+    alt="Levi Broeksma, levibroeksma.com, photo by Rocky Khedoe, 13plus31.com"
+    button_txt="About Levi"
+    url="/about"
+  />
   <div class="w-full max-w-5xl px-4 xl:p-0">
     <h1>{pageTitle}</h1>
   </div>
