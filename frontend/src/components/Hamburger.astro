@@ -1,0 +1,8 @@
+---
+import Icon from "astro-icon";
+const { action } = Astro.props;
+---
+
+<div @click={action} class="cursor-pointer sm:hidden">
+  <Icon name="cil:hamburger-menu" class="w-8" />
+</div>
