@@ -1,22 +1,17 @@
 ---
-const {
-  text = "About me",
-  url,
-  colorFrom = "cerulean-400",
-  colorTo = "pink-400",
-} = Astro.props;
+const { text = "About me", url } = Astro.props;
 ---
 
 <div class="group relative max-w-fit">
   <a
     href={url}
-    class=`px-7 py-4 z-10 bg-slate-900 rounded-full leading-none flex items-center max-w-fit divide-x relative divide-${colorFrom} group-hover:divide-gray-100`
+    class=`px-7 py-4 z-10 bg-slate-900 rounded-full leading-none flex items-center max-w-fit divide-x relative divide-cerulean-400 group-hover:divide-gray-100`
   >
-    <span class=`text-${colorFrom} font-medium pr-6 group-hover:text-gray-100`
+    <span class=`text-cerulean-400 font-medium pr-6 group-hover:text-gray-100`
       >{text}</span
     >
     <span
-      class=`text-${colorTo} pl-6 text-2xl leading-none pb-1 group-hover:text-gray-100`
+      class=`text-pink-400 pl-6 text-2xl leading-none pb-1 group-hover:text-gray-100`
       >&rarr;</span
     >
   </a>
