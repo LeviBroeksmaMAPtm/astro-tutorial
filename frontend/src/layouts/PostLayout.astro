@@ -1,0 +1,25 @@
+---
+import Icon from "astro-icon";
+import Layout from "../layouts/Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout pageTitle={"Blog - " + frontmatter.title}>
+  <div class="z-0 box-border h-full max-w-5xl flex-1 bg-slate-100 px-8 py-6">
+    <div class="mb-4">
+      <div class="mb-4">
+        <h1 class="text-2xl font-bold">{frontmatter.title}</h1>
+        <small class="italic text-slate-500"
+          >Published on: {frontmatter.pubDate}</small
+        >
+      </div>
+      <div class="flex flex-col italic text-slate-500">
+        <div class="flex gap-2">
+          <Icon name="ic:baseline-account-circle" class="w-6" />
+          <p>Written by {frontmatter.author}</p>
+        </div>
+      </div>
+    </div>
+    <slot />
+  </div>
+</Layout>
