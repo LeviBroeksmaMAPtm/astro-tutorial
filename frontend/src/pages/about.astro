@@ -1,4 +1,6 @@
 ---
+import Layout from "../layouts/Layout.astro";
+
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -6,26 +8,14 @@ const identity = {
   occupation: "Technical Writer",
   hobbies: ["photography", "birdwatching", "baseball"],
 };
-import Navigation from "../components/Nav.astro";
-
-
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
 const happy = true;
 const finished = false;
 const goal = 3;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="w-screen min-h-screen border-red-600 border-2 box-border p-8">
-    <Navigation />
-
-
+<Layout pageTitle={pageTitle}>
+  <div class="w-full max-w-5xl">
     <h1 class="text-2xl font-bold tracking-wide">{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -70,5 +60,5 @@ const goal = 3;
         <p>My goal is not 3 days.</p>
       )
     }
-  </body>
-</html>
+  </div>
+</Layout>
