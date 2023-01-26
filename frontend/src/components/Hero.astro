@@ -1,0 +1,24 @@
+---
+// Imports
+import PillButton from "./PillButton.astro";
+// Props
+const { title, subtitle, button_txt, url, img, alt } = Astro.props;
+---
+
+<section class="relative w-full transition-all duration-500 ease-in-out">
+  <div
+    class="z-10 flex flex-col gap-4 bg-black p-6 pb-0 pt-8 font-black sm:absolute sm:top-12 sm:left-4 sm:bg-transparent md:top-20 lg:top-28 xl:left-48 xl:top-56"
+  >
+    <h1
+      class="text-cerulean-400 z-10 flex flex-col gap-2 text-4xl font-black sm:text-5xl"
+    >
+      {title}
+      <span class="mb-2 text-xl font-bold text-pink-600 sm:text-3xl">
+        {subtitle}
+      </span>
+    </h1>
+
+    <PillButton url={url} />
+  </div>
+  <img src={img} alt={alt} class="relative -z-10 -mt-4 sm:mt-auto" />
+</section>

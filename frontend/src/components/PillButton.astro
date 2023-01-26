@@ -1,0 +1,23 @@
+---
+const { text = "About me", url } = Astro.props;
+---
+
+<div class="group relative max-w-fit">
+  <a
+    href={url}
+    class=`px-7 py-4 z-10 bg-slate-900 rounded-full leading-none flex items-center max-w-fit divide-x relative divide-cerulean-400 group-hover:divide-gray-100`
+  >
+    <span class=`text-cerulean-400 font-medium pr-6 group-hover:text-gray-100`
+      >{text}</span
+    >
+    <span
+      class=`text-pink-400 pl-6 text-2xl leading-none pb-1 group-hover:text-gray-100`
+      >&rarr;</span
+    >
+  </a>
+  <div
+    class=`absolute -inset-0.5 opacity-70
+bg-gradient-to-tr from-cerulean-400 to-pink-400 rounded-full blur group-hover:blur-md group-hover:opacity-100`
+  >
+  </div>
+</div>
