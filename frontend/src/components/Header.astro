@@ -1,0 +1,18 @@
+---
+import Nav from "./Nav.astro";
+import Hamburger from "./Hamburger.astro";
+---
+
+<header
+  class="z-10 flex w-full justify-center py-4 text-slate-700 shadow-md"
+  x-data="headerData()"
+>
+  <nav class="flex w-full max-w-7xl justify-between p-4 sm:justify-end 2xl:p-0">
+    <Hamburger action="test()" />
+    <div class="hidden w-1/4 justify-end gap-4 sm:flex"><Nav /></div>
+  </nav>
+</header>
+
+<script>
+  import "../scripts/header.js";
+</script>
