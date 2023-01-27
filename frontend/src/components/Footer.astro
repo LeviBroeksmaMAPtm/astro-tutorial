@@ -1,35 +1,33 @@
 ---
 import { Icon } from "astro-icon";
+import Social from "./Social.astro";
 const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-slate-200 py-6">
-  <div class="mb-4 w-full text-center text-xl tracking-wide text-slate-400">
+  <div
+    class="dark:text-mirage-500 mb-4 w-full text-center text-xl font-medium tracking-wide text-slate-400"
+  >
     <span>Contact</span>
   </div>
   <div class="flex w-full justify-center gap-8">
-    <a
-      href="#"
-      class="hover:text-cerulean-500 text-slate-400 hover:scale-110 hover:shadow-sm"
-      target="_blank"><Icon name="uiw:linkedin" class="w-6" /></a
-    >
-    <a
-      href="#"
-      class="hover:text-cerulean-500 text-slate-400 hover:scale-110 hover:shadow-sm"
-      target="_blank"><Icon name="uiw:github" class="w-6" /></a
-    >
-    <a
-      href="mailto:levi@broeksma.nl"
-      class="hover:text-cerulean-500 text-slate-400 hover:scale-110 hover:shadow-sm"
-      target="_blank"><Icon name="uiw:mail" class="w-6" /></a
-    >
-    <a
-      href="tel:+31640206977"
-      class="hover:text-cerulean-500 text-slate-400 hover:scale-110 hover:shadow-sm"
-      target="_blank"><Icon name="ic:twotone-phone-iphone" class="w-6" /></a
-    >
+    <Social url="#">
+      <Icon name="uiw:linkedin" class="w-6" />
+    </Social>
+
+    <Social url="#">
+      <Icon name="uiw:github" class="w-6" />
+    </Social>
+
+    <Social url="#">
+      <Icon name="uiw:mail" class="w-6" />
+    </Social>
+
+    <Social url="#">
+      <Icon name="ic:twotone-phone-iphone" class="w-6" />
+    </Social>
   </div>
-  <div class="text-cerulean-400 w-full pt-4 text-center">
+  <div class="text-cerulean-400 dark:text-mirage-500 w-full pt-4 text-center">
     <small>
       © {year} All rights reserved Levi Broeksma, Design & Development.
     </small>
