@@ -4,10 +4,10 @@
 
 @layer base {
     h1 {
-        @apply text-4xl text-slate-800 font-bold tracking-wide mb-4;
+        @apply text-4xl text-slate-800 font-bold tracking-wide mb-4 dark:text-slate-100 xl:mb-8
       }
 
     p {
-      @apply text-slate-800
+      @apply text-slate-800 dark:text-slate-100
     }
 }
