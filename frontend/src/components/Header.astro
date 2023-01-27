@@ -6,9 +6,9 @@ import NavLink from "../components/NavLink.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-white text-center text-xs font-semibold"
+  class="sticky top-0 z-50 w-full text-center text-xs font-semibold"
   x-data="{isOpen: false, showBar: false}"
-  :class=" showBar === true ? '' : 'bg-white shadow transition duration-100' "
+  :class=" showBar === true ? '' : '  transition duration-100' "
   @scroll.window="window.pageYOffset > 20"
 >
   <div
